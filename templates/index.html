@@ -4,23 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Song Tracker</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
-<body>
-    <h1>DJ Song Tracker</h1>
-    <p>Dougie: {{ dougie }}</p>
-    <p>No Hands: {{ no_hands }}</p>
-    <p>FE!N: {{ fein }}</p>
-    
-    <form action="{{ url_for('play_dougie') }}" method="get">
-        <button type="submit">Play The Dougie</button>
-    </form>
-    
-    <form action="{{ url_for('play_no_hands') }}" method="get">
-        <button type="submit">Play No Hands</button>
-    </form>
-    
-    <form action="{{ url_for('play_fein') }}" method="get">
-        <button type="submit">Play FE!N</button>
-    </form>
+<body class="bg-light">
+    <div class="container d-flex justify-content-center align-items-center" style="height: 100vh;">
+        <div class="card p-4 shadow-sm text-center">
+            <h1 class="card-title">DJ Song Tracker</h1>
+            <div class="card-body">
+                <div class="mb-4">
+                    <p>Dougie Plays: <strong>{{ dougie }}</strong></p>
+                    <form action="{{ url_for('play_dougie') }}" method="get">
+                        <button type="submit" class="btn btn-primary btn-lg btn-block">Play The Dougie</button>
+                    </form>
+                </div>
+                <div class="mb-4">
+                    <p>No Hands Plays: <strong>{{ no_hands }}</strong></p>
+                    <form action="{{ url_for('play_no_hands') }}" method="get">
+                        <button type="submit" class="btn btn-success btn-lg btn-block">Play No Hands</button>
+                    </form>
+                </div>
+                <div class="mb-4">
+                    <p>FE!N Plays: <strong>{{ fein }}</strong></p>
+                    <form action="{{ url_for('play_fein') }}" method="get">
+                        <button type="submit" class="btn btn-danger btn-lg btn-block">Play FE!N</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>

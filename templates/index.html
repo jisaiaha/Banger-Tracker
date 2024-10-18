@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Song Tracker</title>
+</head>
+<body>
+    <h1>DJ Song Tracker</h1>
+    <p>Dougie: {{ dougie }}</p>
+    <p>No Hands: {{ no_hands }}</p>
+    <p>FE!N: {{ fein }}</p>
+    
+    <form action="{{ url_for('play_dougie') }}" method="get">
+        <button type="submit">Play The Dougie</button>
+    </form>
+    
+    <form action="{{ url_for('play_no_hands') }}" method="get">
+        <button type="submit">Play No Hands</button>
+    </form>
+    
+    <form action="{{ url_for('play_fein') }}" method="get">
+        <button type="submit">Play FE!N</button>
+    </form>
+</body>
+</html>
